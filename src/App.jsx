@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { AppProvider } from './context/AppContext';
 import Navbar from './components/Navbar';
@@ -12,10 +12,29 @@ import Profile from './pages/Profile';
 import UserProfile from './pages/UserProfile';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import { useEffect } from 'react';
+
+// Component to handle GitHub Pages SPA routing
+function GitHubPagesRouter() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle the redirected URL from 404.html
+    if (location.search.startsWith('?/')) {
+      const path = location.search.slice(2); // Remove '?/'
+      const search = location.hash ? `?${location.hash.slice(1)}` : '';
+      navigate(`${path}${search}`, { replace: true });
+    }
+  }, [location, navigate]);
+
+  return null;
+}
 
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <GitHubPagesRouter />
       <AuthProvider>
         <AppProvider>
           <Navbar />
