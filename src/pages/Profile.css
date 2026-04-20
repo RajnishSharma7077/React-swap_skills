@@ -1,0 +1,154 @@
+/* Profile Page */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  align-items: start;
+}
+.profile-main { display: flex; flex-direction: column; gap: 20px; }
+
+/* Header Card */
+.profile-header-card { padding: 32px; }
+.profile-header-card:hover { transform: none; }
+.ph-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.ph-info { flex: 1; }
+.ph-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.ph-name-input {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.ph-location {
+  font-size: 0.875rem;
+  color: var(--surface-400);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.ph-loc-input { font-size: 0.875rem; display: inline; width: auto; }
+.ph-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.8125rem;
+  color: var(--surface-400);
+  flex-wrap: wrap;
+}
+.ph-bio {
+  font-size: 0.9375rem;
+  color: var(--surface-300);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.ph-availability { margin-top: 8px; }
+.ph-availability-display {
+  font-size: 0.875rem;
+  color: var(--surface-400);
+}
+
+/* Skills Card */
+.profile-skills-card { padding: 24px; }
+.profile-skills-card:hover { transform: none; }
+.psc-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.psc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.skill-remove {
+  margin-left: 6px;
+  font-size: 1rem;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.skill-remove:hover { opacity: 1; }
+.psc-add { display: flex; gap: 8px; }
+.psc-add .form-select { flex: 1; }
+
+/* Sidebar */
+.profile-sidebar { display: flex; flex-direction: column; gap: 20px; }
+.profile-stats-card, .profile-reviews-card { padding: 24px; }
+.profile-stats-card:hover, .profile-reviews-card:hover { transform: none; }
+.psbc-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.profile-stat-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  text-align: center;
+}
+.psi-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.psi-label {
+  font-size: 0.6875rem;
+  color: var(--surface-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Reviews */
+.no-reviews { color: var(--surface-500); font-size: 0.875rem; }
+.review-list { display: flex; flex-direction: column; gap: 16px; }
+.review-item {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.review-item:last-child { border-bottom: none; padding-bottom: 0; }
+.ri-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.ri-info { flex: 1; display: flex; flex-direction: column; }
+.ri-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.ri-date {
+  font-size: 0.6875rem;
+  color: var(--surface-500);
+}
+.ri-comment {
+  font-size: 0.8125rem;
+  color: var(--surface-400);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+  .ph-top { flex-direction: column; align-items: center; text-align: center; }
+  .ph-meta { justify-content: center; }
+}

@@ -1,0 +1,154 @@
+/* Dashboard Page */
+.dash-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+.dash-welcome-left { flex: 1; }
+
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.stat-card { position: relative; overflow: hidden; }
+.stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.dash-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.dash-section-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* Session Cards */
+.dash-session-list { display: flex; flex-direction: column; gap: 12px; }
+.dash-session-card { padding: 20px; }
+.dash-session-card:hover { cursor: default; }
+.dsc-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.dsc-info { flex: 1; }
+.dsc-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--white);
+}
+.dsc-meta {
+  font-size: 0.8125rem;
+  color: var(--surface-400);
+}
+.dsc-role {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.dsc-role.teaching {
+  background: rgba(16,185,129,0.12);
+  color: var(--emerald-400);
+}
+.dsc-role.learning {
+  background: rgba(139,92,246,0.12);
+  color: var(--primary-400);
+}
+.dsc-bottom {
+  display: flex;
+  gap: 16px;
+  font-size: 0.8125rem;
+  color: var(--surface-400);
+}
+
+/* Match Cards */
+.dash-match-list { display: flex; flex-direction: column; gap: 12px; }
+.dash-match-card {
+  padding: 20px;
+  display: block;
+}
+.dmc-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.dmc-info { flex: 1; }
+.dmc-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--white);
+}
+.dmc-location {
+  font-size: 0.75rem;
+  color: var(--surface-500);
+}
+.dmc-rating {
+  font-size: 0.8125rem;
+  color: var(--surface-400);
+  margin-top: 2px;
+}
+.perfect-badge {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(6,182,212,0.2));
+  color: var(--primary-300);
+  border: 1px solid rgba(124,58,237,0.3);
+  white-space: nowrap;
+}
+.dmc-skills { display: flex; flex-direction: column; gap: 8px; }
+.dmc-skill-row { display: flex; flex-direction: column; gap: 4px; }
+.dmc-skill-label {
+  font-size: 0.6875rem;
+  color: var(--surface-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.dmc-skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* Skills Overview */
+.dash-skills-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.dash-skills-card { padding: 24px; }
+.dash-skills-card:hover { transform: none; }
+.dsk-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.dsk-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+@media (max-width: 768px) {
+  .dash-welcome { flex-direction: column-reverse; gap: 16px; text-align: center; padding: 24px; }
+  .dash-stats { grid-template-columns: repeat(2, 1fr); }
+  .dash-grid { grid-template-columns: 1fr; }
+  .dash-skills-overview { grid-template-columns: 1fr; }
+}
